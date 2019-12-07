@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import requests, random, datetime, sys, time, argparse
 from colorama import Fore, Back, Style
-interation = 0
 class spymer:
 	def main(self):
 		print('''
@@ -11,6 +10,7 @@ class spymer:
 ║╔═╗║║╔═╗║║╔══╝
 ║╚═╝║║║─║║║║	
 ╚═══╝╚╝─╚╝╚╝	''')
+		interation = 0
 		parser = argparse.ArgumentParser(prog='bomb.py')
 		parser.add_argument('phonenum', metavar='bomb.py +79000000000')
 		args = parser.parse_args()
