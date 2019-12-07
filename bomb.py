@@ -10,7 +10,7 @@ class spymer:
 ║╔═╗║║╔═╗║║╔══╝
 ║╚═╝║║║─║║║║	
 ╚═══╝╚╝─╚╝╚╝	''')
-		parser = argparse.ArgumentParser(prog='BHF.IO Bomb')
+		parser = argparse.ArgumentParser(prog='bomb.py')
 		parser.add_argument('phonenum', metavar='phone')
 		args = parser.parse_args()
 		def showstatus(message, type='new'):
