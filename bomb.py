@@ -10,7 +10,6 @@ class spymer:
 ║╔═╗║║╔═╗║║╔══╝
 ║╚═╝║║║─║║║║	
 ╚═══╝╚╝─╚╝╚╝	''')
-		interation = 0
 		parser = argparse.ArgumentParser(prog='bomb.py')
 		parser.add_argument('phonenum', metavar='bomb.py +79000000000')
 		args = parser.parse_args()
@@ -30,6 +29,7 @@ class spymer:
 			return '[' + string + ']'
 		def sleep(x):
 			try:
+				print(showstatus(wrapsbrace('info', True) + ('Отправленно: {}').format(iteration)))
 				time.sleep(x)
 			except KeyboardInterrupt:
 				print('\r' + showstatus(wrapsbrace('except', True) + 'Error! KeyBoardInterput!', 'warn'))
@@ -45,7 +45,6 @@ class spymer:
 		_name = ''
 		for x in range(12):
 			_name = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
-			print(showstatus(wrapsbrace('info', True) + ('Отправленно: {}').format(iteration)))
 		iteration = 0			
 		_phone9 = _phone[1:]
 		_phoneAresBank = '+'+_phone[0]+'('+_phone[1:4]+')'+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] #+7+(915)350-99-08
