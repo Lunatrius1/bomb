@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import requests, random, datetime, sys, time, argparse
 from colorama import Fore, Back, Style
+interation = 0
 class spymer:
 	def main(self):
 		print('''
