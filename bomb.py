@@ -11,7 +11,8 @@ class spymer:
 ║╚═╝║║║─║║║║	
 ╚═══╝╚╝─╚╝╚╝	''')
 		parser = argparse.ArgumentParser(prog='bomb.py')
-		parser.add_argument('phonenum', 'type', metavar='bomb.py +79000000000')
+		parser.add_argument('phonenum', metavar='bomb.py +79000000000 1')
+		parser.add_argument('type', metavar='bomb.py +79000000000 1')
 		args = parser.parse_args()
 		def showstatus(message, type='new'):
 			now = datetime.datetime.now().strftime('%H:%M:%S')
