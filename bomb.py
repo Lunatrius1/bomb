@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import requests, random, datetime, sys, time, argparse
 from colorama import Fore, Back, Style
 class spymer:
